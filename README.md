@@ -2,7 +2,7 @@
 
 ## New revelation of Audio Streaming Platform Being Started from Today, signed by Mr. Wayne and Mr. Solo
 
-#### Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this.
+#### Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. You must use provided folder structured and commit style.
 
 ## You must need to use provided VSCode settings for code styling with eslint enabled. eslint can be disabled.
 
