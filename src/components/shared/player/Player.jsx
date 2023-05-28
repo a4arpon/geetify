@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import {
+  PauseCircleFill,
   PlayCircleFill,
   SkipBackwardCircleFill,
   SkipForwardCircleFill
@@ -8,8 +9,10 @@ import { AuthContext } from '../../../contexts/AuthProvider'
 
 const Player = () => {
   const { user } = useContext(AuthContext)
+  const [isPlaying, setIsPlaying] = useState(false)
   const handlePlayAudio = () => {
     if (user) {
+      setIsPlaying(!isPlaying)
       console.log('Yes!, You can play.')
     } else {
       console.log("No!, You can't play audio.")
@@ -22,9 +25,16 @@ const Player = () => {
           <button className="btn btn-circle">
             <SkipBackwardCircleFill size={48} />
           </button>
-          <button className="btn btn-circle" onClick={handlePlayAudio}>
-            <PlayCircleFill size={48} />
-          </button>
+          {isPlaying ? (
+            <button className="btn btn-circle" onClick={handlePlayAudio}>
+              <PauseCircleFill size={48} />
+            </button>
+          ) : (
+            <button className="btn btn-circle" onClick={handlePlayAudio}>
+              <PlayCircleFill size={48} />
+            </button>
+          )}
+
           <button className="btn btn-circle">
             <SkipForwardCircleFill size={48} />
           </button>

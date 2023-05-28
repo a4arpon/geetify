@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../../contexts/AuthProvider'
+import { AuthContext } from '../../../contexts/AuthProvider'
 
 const Navbar = () => {
   const { user } = useContext(AuthContext)
@@ -12,14 +12,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex-none gap-2">
-        <div className="form-control hidden">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered focus:outline-none"
-          />
-        </div>
-        {user ? (
+        {!user ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -28,7 +21,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-3 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
                 <a className="justify-between">Profile</a>
@@ -37,12 +30,14 @@ const Navbar = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <Link className="bg-error text-black font-semibold">
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>
         ) : (
-          <Link to={'/login'} className="btn btn-primary text-xl">
+          <Link to={'/login'} className="btn btn-primary font-semibold text-lg">
             Login
           </Link>
         )}
