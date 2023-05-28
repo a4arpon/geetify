@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Outlet } from 'react-router-dom'
-import Navbar from '../components/shared/Navbar'
+import Navbar from '../components/shared/navbar/Navbar'
 import Player from '../components/shared/player/Player'
 import Sidebar from '../components/shared/sidebar/Sidebar'
 import { AuthContext } from '../contexts/AuthProvider'
