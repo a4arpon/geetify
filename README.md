@@ -8,20 +8,27 @@
 
 # Folder Structure (Important):
 
-1. /\_firebase/ = This folder contains firebase.cong.js configs files.
-2. /assets/ = this folder contains all assets on Geetify.
-   2.1 /backgrounds/ = this folder contains backgrounds images used in site.
-   2.2 /css/ = this folder contains css files used in site
-   2.3 /icons/ = if site have any icons it should be stored here
-   2.4 /imgs/ = sites all images will be here escape svgs images
-   2.5 /svg/ = like before is say this folder should contain all svg images.
-3. /components/ = this folder contains components used in sites which need some times in some 2/3 pages or many more.
-   3.1 /shared = if site uses a component rapidly then it should be it shared folder.
-
-4. /contexts/ = this folder have contexts used in sites.
-5. /layouts/ = container or main layout will be here.
-6. /pages/ = this folder contain all pages in site.
-7. /routes/ = routes and route related files will be here.
+```sh
+src
+|
++-- _firebase            # this folder have firebase config files.
+|
++-- assets            # assets folder can contain all the static files such as images, fonts, etc.
+|
++-- components        # shared components used across the entire application
+|
++-- contexts          # this folder have contexts used in sites.
+|
++-- layouts           # container or main layout will be here.
+|
++-- hooks             # shared hooks used across the entire application
+|
++-- pages             # this folder contain all pages in site.
+|
++-- routes            # routes configuration
+|
++-- utils             # shared utility functions
+```
 
 # Commit Structure (Important).
 
