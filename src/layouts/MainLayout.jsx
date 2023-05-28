@@ -1,5 +1,5 @@
 const MainLayout = () => {
-  return <div>MainLayout</div>
+  return <div className="text-3xl">MainLayout</div>
 }
 
 export default MainLayout
