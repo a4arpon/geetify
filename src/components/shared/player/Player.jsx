@@ -12,7 +12,7 @@ const Player = () => {
     if (user) {
       console.log('Yes!, You can play.')
     } else {
-      console.log("No, You can't play audio.")
+      console.log("No!, You can't play audio.")
     }
   }
   return (
