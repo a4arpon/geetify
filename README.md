@@ -1,17 +1,25 @@
-# Geetify
+# **Geetify**
 
 ## New revelation of Audio Streaming Platform Being Started from Today, signed by Mr. Wayne and Mr. Solo
 
-#### Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. You must use provided folder structured and commit style.
+## Red Alert **(License)**
 
-## You must need to use provided VSCode settings for code styling with eslint enabled. eslint can be disabled.
+Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. But we are happy to say this, you're welcome to contribute GeetiFy as a open source project and share with you friends. GeetiFy is not belongs to any organization, company or person individual. It belongs to all of us. You can check full agreement [License Paper](./LICENSE)
 
-# Folder Structure (Important):
+## **Contribution Guide**
+
+You must need to use provided VSCode settings for code styling with eslint enabled. eslint can't be disabled. You must use provided folder structure and commit style. Only acceptable and tested changes will be allowed with proof.
+
+### If you can't contribute with code, you can contribute with us in financial way. We will be very grateful when you contribute in our community.
+
+---
+
+## Folder Structure (Important):
 
 ```sh
 src
 |
-+-- _firebase            # this folder have firebase config files.
++-- _firebase         # this folder have firebase config files.
 |
 +-- assets            # assets folder can contain all the static files such as images, fonts, etc.
 |
@@ -27,36 +35,38 @@ src
 |
 +-- routes            # routes configuration
 |
-+-- utils             # shared utility functions
++-- utilities         # shared utility functions
 ```
 
-# Commit Structure (Important).
+---
 
-## When you added any feature/ui feature commit msg must be like this:
+## Commit Structure (Important).
+
+### When you added any feature/ui feature commit msg must be like this:
 
 ```sh
 git commit -m "Feature: Floating navbar added with user photo and name."
 ```
 
-## When you added any core feature commit msg must be like this:
+### When you added any core feature commit msg must be like this:
 
 ```sh
 git commit -m "Core: Auth provided optimized for better performance."
 ```
 
-### Another example
+#### Another example
 
 ```sh
 git commit -m "Core: SignIn with google has been added."
 ```
 
-## When you fixed any error in existing code or feature commit msg must be like this:
+### When you fixed any error in existing code or feature commit msg must be like this:
 
 ```sh
 git commit -m "Fix: Auth provider error fixed while user new try register."
 ```
 
-## When you made any changes in **docs** commit msg must be like this:
+### When you made any changes in **docs** commit msg must be like this:
 
 ```sh
 git commit -m "Doc: Installation method explained more detailed way."
