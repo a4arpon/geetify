@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import {
   PauseCircleFill,
   PlayCircleFill,
@@ -6,17 +6,44 @@ import {
   SkipForwardCircleFill
 } from 'react-bootstrap-icons'
 import { AuthContext } from '../../../contexts/AuthProvider'
+import AudioComponent from './AudioComponent'
 
 const Player = () => {
   const { user } = useContext(AuthContext)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [playerVolume, setPlayerVolume] = useState(85)
+  const [duration, setDuration] = useState(0)
+  const audioPlayer = useRef()
+  useEffect(() => {
+    audioPlayer.current.volume = playerVolume / 100
+  }, [playerVolume])
+  useEffect(() => {
+    if (duration === currentTime) {
+      setIsPlaying(false)
+    }
+  }, [duration, currentTime])
+
   const handlePlayAudio = () => {
-    if (user) {
+    if (!user) {
       setIsPlaying(!isPlaying)
+      if (isPlaying) {
+        audioPlayer.current.pause()
+      } else {
+        audioPlayer.current.play()
+      }
       console.log('Yes!, You can play.')
     } else {
       console.log("No!, You can't play audio.")
     }
+  }
+  const getCurrentDuration = () => {
+    const time = audioPlayer.current.currentTime
+    setCurrentTime(parseFloat(time).toFixed(2))
+  }
+  const playerPacket = {
+    audioPlayer,
+    getCurrentDuration,
   }
   return (
     <div className="bottom-0 fixed bg-base-300 w-full p-3 flex   flex-col lg:flex-row justify-center">
@@ -45,10 +72,11 @@ const Player = () => {
             type="range"
             min="0"
             max="100"
-            defaultValue={40}
-            className="range range-xs range-primary"
+            defaultValue={currentTime}
+            className="range range-xs range-primary bg-base-100"
           />
           <span className="text-gray-400">3:59</span>
+          <AudioComponent playerPacket={playerPacket} />
         </div>
       </div>
     </div>

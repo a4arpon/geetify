@@ -21,18 +21,18 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="mt-5 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-300 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">Profile</a>
+                <a className="hover:font-semibold">Profile</a>
               </li>
               <li>
-                <a>Settings</a>
+                <a className="hover:font-semibold">Settings</a>
               </li>
               <li>
-                <Link className="hover:bg-error text-black font-semibold">
+                <button className="hover:bg-error hover:text-black hover:font-semibold">
                   Logout
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
