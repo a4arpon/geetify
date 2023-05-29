@@ -30,7 +30,7 @@ const Navbar = () => {
                 <a>Settings</a>
               </li>
               <li>
-                <Link className="bg-error text-black font-semibold">
+                <Link className="hover:bg-error text-black font-semibold">
                   Logout
                 </Link>
               </li>
