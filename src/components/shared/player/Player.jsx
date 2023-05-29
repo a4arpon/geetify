@@ -5,6 +5,7 @@ import {
   SkipBackwardCircleFill,
   SkipForwardCircleFill
 } from 'react-bootstrap-icons'
+import toast from 'react-hot-toast'
 import { AuthContext } from '../../../contexts/AuthProvider'
 import AudioComponent from './AudioComponent'
 
@@ -25,16 +26,15 @@ const Player = () => {
   }, [duration, currentTime])
 
   const handlePlayAudio = () => {
-    if (!user) {
+    if (user) {
       setIsPlaying(!isPlaying)
       if (isPlaying) {
         audioPlayer.current.pause()
       } else {
         audioPlayer.current.play()
       }
-      console.log('Yes!, You can play.')
     } else {
-      console.log("No!, You can't play audio.")
+      toast.error("You can't play any audio without login.")
     }
   }
   const getCurrentDuration = () => {
@@ -53,7 +53,7 @@ const Player = () => {
     setDuration,
   }
   return (
-    <div className="bottom-0 fixed bg-base-300 w-full p-3 flex   flex-col lg:flex-row justify-center">
+    <div className="bottom-0 fixed bg-base-300 w-full p-3 flex   flex-col lg:flex-row justify-center bg-opacity-75">
       <div className="lg:w-1/2 w-full flex flex-col gap-2 items-center">
         <div className="flex gap-2">
           <button className="btn btn-circle">

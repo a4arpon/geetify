@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider'
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext)
   return (
-    <div className="navbar bg-base-300 lg:p-3">
+    <div className="navbar bg-base-300 lg:p-3 fixed z-10 bg-opacity-75">
       <div className="flex-1">
         <Link to={'/'} className="normal-case text-4xl font-semibold">
           GeetiFy
@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <img src={user?.photoURL} />
               </div>
             </label>
             <ul
@@ -30,14 +30,20 @@ const Navbar = () => {
                 <a className="hover:font-semibold">Settings</a>
               </li>
               <li>
-                <button className="hover:bg-error hover:text-black hover:font-semibold">
+                <button
+                  className="hover:bg-error hover:text-black hover:font-semibold"
+                  onClick={() => logOut()}
+                >
                   Logout
                 </button>
               </li>
             </ul>
           </div>
         ) : (
-          <Link to={'/login'} className="btn btn-primary font-semibold text-lg">
+          <Link
+            to={'/login'}
+            className="btn btn-primary font-semibold text-base"
+          >
             Login
           </Link>
         )}
