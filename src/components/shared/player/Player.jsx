@@ -41,9 +41,15 @@ const Player = () => {
     const time = audioPlayer.current.currentTime
     setCurrentTime(parseFloat(time).toFixed(2))
   }
+
+  const handleSeekBar = (eclipsedTime) => {
+    audioPlayer.current.currentTime = eclipsedTime
+    setCurrentTime(eclipsedTime)
+  }
   const playerPacket = {
     audioPlayer,
     getCurrentDuration,
+    setDuration,
   }
   return (
     <div className="bottom-0 fixed bg-base-300 w-full p-3 flex   flex-col lg:flex-row justify-center">
@@ -67,15 +73,16 @@ const Player = () => {
           </button>
         </div>
         <div className="flex gap-2 items-center w-full">
-          <span className="text-gray-400">0:00</span>
+          <span className="text-gray-400">{(currentTime / 60).toFixed(2)}</span>
           <input
             type="range"
             min="0"
-            max="100"
+            max={duration}
+            onChange={(seekBar) => handleSeekBar(seekBar.target.value)}
             defaultValue={currentTime}
             className="range range-xs range-primary bg-base-100"
           />
-          <span className="text-gray-400">3:59</span>
+          <span className="text-gray-400">{(duration / 60).toFixed(2)}</span>
           <AudioComponent playerPacket={playerPacket} />
         </div>
       </div>
