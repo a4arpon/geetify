@@ -3,7 +3,7 @@ const AudioComponent = ({ playerPacket }) => {
   return (
     <div className="">
       <audio
-        src="/audio.mp3"
+        src="/ben10.mp3"
         ref={audioPlayer}
         onDurationChange={getCurrentDuration}
       ></audio>
