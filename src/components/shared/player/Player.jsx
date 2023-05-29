@@ -43,6 +43,7 @@ const Player = () => {
   }
 
   const handleSeekBar = (eclipsedTime) => {
+    console.log(eclipsedTime)
     audioPlayer.current.currentTime = eclipsedTime
     setCurrentTime(eclipsedTime)
   }
@@ -79,7 +80,7 @@ const Player = () => {
             min="0"
             max={duration}
             onChange={(seekBar) => handleSeekBar(seekBar.target.value)}
-            defaultValue={currentTime}
+            value={currentTime}
             className="range range-xs range-primary bg-base-100"
           />
           <span className="text-gray-400">{(duration / 60).toFixed(2)}</span>

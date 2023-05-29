@@ -6,7 +6,7 @@ const AudioComponent = ({ playerPacket }) => {
     <audio
       src="/audio/runway.mp3"
       ref={audioPlayer}
-      onDurationChange={getCurrentDuration}
+      onTimeUpdate={getCurrentDuration}
       onLoadedData={(a) => {
         setDuration(a.currentTarget.duration.toFixed(2))
       }}
