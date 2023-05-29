@@ -13,6 +13,9 @@ dist-ssr
 *.local
 
 audio.mp3
+ben10.mp3
+BilleE.mp3
+runway.mp3
 # Editor directories and files
 
 !.vscode/extensions.json
