@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { MdDownloadForOffline } from 'react-icons/md'
+import { Download } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider'
 
@@ -14,11 +14,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex gap-2 text-sm">
-          <button className="bg-white text-black font-bold py-1 rounded-2xl px-2">
-            Upgrade
-          </button>
           <button className="flex items-center gap-1 rounded-2xl bg-black py-1 px-2">
-            <MdDownloadForOffline />
+            <Download size={18} />
             Install App
           </button>
         </div>
