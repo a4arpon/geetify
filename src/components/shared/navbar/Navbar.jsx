@@ -1,10 +1,14 @@
 import { useContext } from 'react'
 import { Download } from 'react-bootstrap-icons'
+import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
+  const downLoadOurApp = () => {
+    toast.error('Currently we working on this feature.')
+  }
   return (
     <div className="navbar flex justify-between bg-base-300 lg:p-3 fixed z-10 bg-opacity-75 gap-2">
       <div className="w-full flex justify-between">
@@ -14,7 +18,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex gap-2 text-sm">
-          <button className="flex items-center gap-1 rounded-2xl bg-black py-1 px-2">
+          <button
+            className="flex items-center gap-1 rounded-2xl bg-black py-2 px-3 font-semibold"
+            onClick={downLoadOurApp}
+          >
             <Download size={18} />
             Install App
           </button>
