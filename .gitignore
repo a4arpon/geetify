@@ -11,11 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
-
-audio.mp3
-ben10.mp3
-BilleE.mp3
-runway.mp3
+/audio/
+audio/*
+public/audio/*
+/src/components/shared/player/*
+/src/components/shared/player/Player.jsx
+/src/components/shared/player/AudioComponent.jsx
 # Editor directories and files
 
 !.vscode/extensions.json
