@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
         <div className="flex gap-2 text-sm">
           <button
-            className="flex items-center gap-1 rounded-2xl bg-black py-2 px-3 font-semibold"
+            className="flex items-center gap-2 rounded-2xl bg-black py-2 px-3 font-semibold"
             onClick={downLoadOurApp}
           >
             <Download size={18} />
