@@ -1,12 +1,11 @@
-import { useContext } from 'react'
 import { Google } from 'react-bootstrap-icons'
 import { toast } from 'react-hot-toast'
 import { Parallax } from 'react-parallax'
 import { Navigate } from 'react-router-dom'
 import backgroundForLogin from '../../assets/backgrounds/2.webp'
-import { AuthContext } from '../../contexts/AuthProvider'
+import useAuth from '../../hooks/useAuth'
 const Login = () => {
-  const { signWithGoogle, user } = useContext(AuthContext)
+  const { signWithGoogle, user } = useAuth()
   if (user) {
     return <Navigate to={'/'} replace />
   }

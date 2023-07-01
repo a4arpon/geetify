@@ -1,18 +1,19 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   PauseCircleFill,
   PlayCircleFill,
   SkipBackwardCircleFill,
-  SkipForwardCircleFill
+  SkipForwardCircleFill,
+  VolumeUpFill
 } from 'react-bootstrap-icons'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../../../contexts/AuthProvider'
+import useAuth from '../../../hooks/useAuth'
 import AudioComponent from './AudioComponent'
 import VolumeChanger from './VolumeChanger'
 
 const Player = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useAuth()
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [playerVolume, setPlayerVolume] = useState(85)
@@ -45,7 +46,6 @@ const Player = () => {
   }
 
   const handleSeekBar = (eclipsedTime) => {
-    console.log(eclipsedTime)
     audioPlayer.current.currentTime = eclipsedTime
     setCurrentTime(eclipsedTime)
   }
@@ -57,11 +57,13 @@ const Player = () => {
   return (
     <div className="bottom-0 fixed bg-base-300 w-full p-3 grid lg:grid-cols-4 justify-between bg-opacity-75 items-center">
       <div className="hidden lg:flex lg:gap-2">
-        <img src="https://i.ytimg.com/vi/gj5QG8Jv8XQ/sddefault.jpg" alt="" className="h-20 w-20 rounded-md" />
+        <img
+          src="https://i.ytimg.com/vi/gj5QG8Jv8XQ/sddefault.jpg"
+          alt=""
+          className="h-20 w-20 rounded-md"
+        />
         <div>
-          <h1 className="text-lg font-bold">
-            AURORA - Runaway Use HeadPhone
-          </h1>
+          <h1 className="text-lg font-bold">AURORA - Runaway Use HeadPhone</h1>
           <Link className="font-semibold link-hover">AURORA</Link>
           <p>203243 Times Played</p>
         </div>
@@ -100,10 +102,12 @@ const Player = () => {
         </div>
       </div>
       <div
-        className="hidden lg:flex justify-end"
+        className="hidden lg:flex justify-end items-center gap-2"
         title={`Current Volume ${playerVolume}`}
       >
+        <VolumeUpFill size={32} />
         <VolumeChanger volumeChange={setPlayerVolume} />
+        <p className="text-gray-400">{playerVolume}</p>
       </div>
     </div>
   )

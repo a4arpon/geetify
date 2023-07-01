@@ -13,5 +13,5 @@ assets
 |
 +-- svgs              # SVG Images for site stored here.
 |
-+-- ...
++__
 ```
