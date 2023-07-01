@@ -1,6 +1,5 @@
 import { Google } from 'react-bootstrap-icons'
 import { toast } from 'react-hot-toast'
-import { Parallax } from 'react-parallax'
 import { Navigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 const Login = () => {
@@ -16,56 +15,50 @@ const Login = () => {
       .catch((err) => toast.error(err.message))
   }
   return (
-    <Parallax
-      blur={{ min: -15, max: 20 }}
-      bgImage="https://images.unsplash.com/photo-1687226012369-36ec24bec4c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-      strength={-200}
-    >
-      <div className="flex justify-center items-center py-20 px-3 h-screen">
-        <div className="card flex-shrink-0 w-full max-w-lg bg-base-200 bg-opacity-75">
-          <div className="card-body">
-            <form>
-              <h1 className="text-center text-3xl uppercase font-semibold border-b pb-2 mb-3">
-                Login Now
-              </h1>
-              <div className="form-control mb-2">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="email"
-                  className="input input-bordered focus:outline-none bg-opacity-75"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="password"
-                  className="input input-bordered mb-2 focus:outline-none bg-opacity-75"
-                />
-                <label className="label label-text-alt link link-hover">
-                  Forgot password?
-                </label>
-              </div>
-              <div className="form-control mt-3">
-                <button className="btn btn-primary font-semibold">Login</button>
-              </div>
-            </form>
-            <div className="divider">OR</div>
-            <button
-              className="btn gap-2 btn-success font-semibold"
-              onClick={handleGoogleProvider}
-            >
-              <Google size={24} /> Continue With Google
-            </button>
-          </div>
+    <div className="flex justify-center items-center py-20 px-3 h-screen">
+      <div className="card flex-shrink-0 w-full max-w-lg bg-base-200 bg-opacity-75">
+        <div className="card-body">
+          <form>
+            <h1 className="text-center text-3xl uppercase font-semibold border-b pb-2 mb-3">
+              Login Now
+            </h1>
+            <div className="form-control mb-2">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="text"
+                placeholder="email"
+                className="input input-bordered focus:outline-none bg-opacity-75"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="text"
+                placeholder="password"
+                className="input input-bordered mb-2 focus:outline-none bg-opacity-75"
+              />
+              <label className="label label-text-alt link link-hover">
+                Forgot password?
+              </label>
+            </div>
+            <div className="form-control mt-3">
+              <button className="btn btn-primary font-semibold">Login</button>
+            </div>
+          </form>
+          <div className="divider">OR</div>
+          <button
+            className="btn gap-2 btn-success font-semibold"
+            onClick={handleGoogleProvider}
+          >
+            <Google size={24} /> Continue With Google
+          </button>
         </div>
       </div>
-    </Parallax>
+    </div>
   )
 }
 

@@ -1,33 +1,23 @@
 import { useContext } from 'react'
-import { Download } from 'react-bootstrap-icons'
-import toast from 'react-hot-toast'
+import { List } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
-  const downLoadOurApp = () => {
-    toast.error('Currently we working on this feature.')
-  }
   return (
-    <div className="navbar flex justify-between bg-base-300 lg:p-3 fixed z-10 bg-opacity-75 gap-2">
-      <div className="w-full flex justify-between">
-        <div>
+    <div className="navbar bg-base-200 bg-opacity-50 glassEffect lg:p-2">
+      <div className="flex-1 flex justify-between">
+        <div className="flex items-center gap-2">
+          <label className="btn lg:hidden" htmlFor="my-drawer-2">
+            <List size={28} />
+          </label>
           <Link to={'/'} className="normal-case text-4xl font-semibold">
             GeetiFy
           </Link>
         </div>
-        <div className="flex gap-2 text-sm">
-          <button
-            className="flex items-center gap-2 rounded-2xl bg-black py-2 px-3 font-semibold"
-            onClick={downLoadOurApp}
-          >
-            <Download size={18} />
-            <span className="hidden lg:inline">Install App</span>
-          </button>
-        </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex-none">
         {user
           ? (
           <div className="dropdown dropdown-end">
@@ -38,17 +28,17 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-5 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-300 rounded-box w-52"
+              className="mt-4 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-200 rounded-box w-52"
             >
               <li>
-                <a className="hover:font-semibold">Profile</a>
+                <a>Profile</a>
               </li>
               <li>
-                <a className="hover:font-semibold">Settings</a>
+                <a>Settings</a>
               </li>
               <li>
                 <button
-                  className="hover:bg-error hover:text-black hover:font-semibold"
+                  className="hover:bg-error hover:text-black"
                   onClick={() => logOut()}
                 >
                   Logout
