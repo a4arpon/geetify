@@ -2,7 +2,6 @@ import { Google } from 'react-bootstrap-icons'
 import { toast } from 'react-hot-toast'
 import { Parallax } from 'react-parallax'
 import { Navigate } from 'react-router-dom'
-import backgroundForLogin from '../../assets/backgrounds/2.webp'
 import useAuth from '../../hooks/useAuth'
 const Login = () => {
   const { signWithGoogle, user } = useAuth()
@@ -19,7 +18,7 @@ const Login = () => {
   return (
     <Parallax
       blur={{ min: -15, max: 20 }}
-      bgImage={backgroundForLogin}
+      bgImage="https://images.unsplash.com/photo-1687226012369-36ec24bec4c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
       strength={-200}
     >
       <div className="flex justify-center items-center py-20 px-3 h-screen">

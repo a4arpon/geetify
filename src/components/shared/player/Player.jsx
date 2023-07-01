@@ -52,7 +52,7 @@ const Player = () => {
   const playerPacket = {
     audioPlayer,
     getCurrentDuration,
-    setDuration,
+    setDuration
   }
   return (
     <div className="bottom-0 fixed bg-base-300 w-full p-3 grid lg:grid-cols-4 justify-between bg-opacity-75 items-center">
@@ -73,15 +73,17 @@ const Player = () => {
           <button className="btn btn-circle">
             <SkipBackwardCircleFill size={48} />
           </button>
-          {isPlaying ? (
+          {isPlaying
+            ? (
             <button className="btn btn-circle" onClick={handlePlayAudio}>
               <PauseCircleFill size={48} />
             </button>
-          ) : (
+              )
+            : (
             <button className="btn btn-circle" onClick={handlePlayAudio}>
               <PlayCircleFill size={48} />
             </button>
-          )}
+              )}
 
           <button className="btn btn-circle">
             <SkipForwardCircleFill size={48} />

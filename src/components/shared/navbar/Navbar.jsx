@@ -23,12 +23,13 @@ const Navbar = () => {
             onClick={downLoadOurApp}
           >
             <Download size={18} />
-            Install App
+            <span className="hidden lg:inline">Install App</span>
           </button>
         </div>
       </div>
       <div className="flex gap-2">
-        {user ? (
+        {user
+          ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -55,14 +56,15 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        ) : (
+            )
+          : (
           <Link
             to={'/login'}
             className="btn btn-primary font-semibold text-base"
           >
             Login
           </Link>
-        )}
+            )}
       </div>
     </div>
   )
