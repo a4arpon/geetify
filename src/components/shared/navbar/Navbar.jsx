@@ -6,7 +6,7 @@ import { AuthContext } from '../../../contexts/AuthProvider'
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
   return (
-    <div className="navbar bg-base-200 bg-opacity-50 glassEffect lg:p-2">
+    <div className="navbar fixed z-10 bg-base-200 bg-opacity-50 glassEffect lg:p-2">
       <div className="flex-1 flex justify-between">
         <div className="flex items-center gap-2">
           <label className="btn lg:hidden" htmlFor="my-drawer-2">
@@ -28,7 +28,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-4 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-200 rounded-box w-52"
+              className="mt-4 p-2 shadow menu gap-2 menu-compact dropdown-content bg-base-200 rounded-box w-52 bg-opacity-75"
             >
               <li>
                 <a>Profile</a>
