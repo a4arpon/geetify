@@ -6,7 +6,6 @@ import useAudio from '../../../hooks/useAudio'
 const Player = () => {
   const { audio } = useAudio()
 
-
   return (
     <div className="bottom-0 fixed bg-base-300 glassEffect w-full p-3 grid lg:grid-cols-3 justify-between bg-opacity-50 items-center">
       <div className="hidden lg:flex lg:gap-2">
@@ -21,7 +20,10 @@ const Player = () => {
           <p>{audio?.visitorsCount} Times Played</p>
         </div>
       </div>
-      <H5AudioPlayer src={audio?.audio?.url}></H5AudioPlayer>
+      <H5AudioPlayer
+        src={audio?.audio?.url}
+        volume={0.75}
+      ></H5AudioPlayer>
     </div>
   )
 }

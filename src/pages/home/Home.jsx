@@ -15,7 +15,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="grid lg:grid-cols-4 gap-2">
+    <div className="grid lg:grid-cols-4 gap-2 mt-5">
       {audios?.map((item) => (
         <AudioItem key={item?.thumbnail} item={item}/>
       ))}

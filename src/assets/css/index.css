@@ -8,25 +8,33 @@ body {
   backdrop-filter: blur(10px) saturate(200%);
   -webkit-backdrop-filter: blur(10px) saturate(200%);
 }
-
+/* React HTML Audio */
 .rhap_container {
-  @apply bg-transparent col-span-2 !important;
+  @apply bg-transparent col-span-2 p-0 !important;
 }
 .rhap_time {
   @apply text-base-content !important;
 }
 .rhap_additional-controls {
-  @apply hidden lg:invisible !important;
+  @apply hidden !important;
 }
-.rhap_progress-indicator{
-  @apply bg-primary !important
+.rhap_progress-indicator,
+.rhap_progress-filled {
+  @apply bg-primary !important;
 }
-.rhap_progress-filled{
-  @apply bg-primary !important
+.rhap_download-progress {
+  @apply bg-base-200 !important;
 }
-.rhap_download-progress{
-  @apply bg-base-200 !important
+.rhap_progress-bar-show-download {
+  @apply bg-base-100 !important;
 }
-.rhap_progress-bar-show-download{
-  @apply bg-base-100
+
+.rhap_play-pause-button > svg {
+  @apply h-full w-full !important;
+}
+.rhap_play-pause-button {
+  @apply btn btn-primary btn-circle focus:outline-none !important;
+}
+.rhap_button-clear {
+  @apply overflow-visible !important;
 }
