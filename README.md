@@ -6,6 +6,8 @@
 
 Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. But we are happy to say this, you're welcome to contribute Knowlyric as a open source project and share with you friends. Knowlyric is not belongs to any organization, company or person individual. It belongs to all of us. You can check full agreement [License Paper](./LICENSE)
 
+NB: কমিউনিটির জিনিস, গণ্য মান্য নেতাদের মোতো নিজের নামে  চালায় দিয়েন না।  যদি কন্ট্রিবিউট করতে মনচায় তাইলে এখানে ফিচার অ্যাড করে নয়তো এখানকার Repo Fork করে কাজ করিয়েন । যদি চিকনা বুদ্ধি করে রিপো ডাউনলড করে গিট ফোল্ডার ডিলিট করে নিজের নামে পুশ করেন  ভাল হবে না!!!
+
 ## **Contribution Guide**
 
 You must need to use provided VSCode settings for code styling with eslint enabled. eslint can't be disabled. You must use provided folder structure and commit style. Only acceptable and tested changes will be allowed with proof.
