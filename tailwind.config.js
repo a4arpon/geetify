@@ -7,7 +7,7 @@ export default {
   daisyui: {
     themes: [
       {
-        geetify: {
+        knowlyric: {
           primary: '#4ade80',
           secondary: '#34d399',
           accent: '#a5b4fc',

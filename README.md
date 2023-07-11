@@ -1,10 +1,10 @@
-# **Geetify**
+# **Knowlyric**
 
 ## New revelation of Audio Streaming Platform Being Started from Today, signed by Mr. Wayne and Mr. Solo
 
 ## Red Alert **(License)**
 
-Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. But we are happy to say this, you're welcome to contribute GeetiFy as a open source project and share with you friends. GeetiFy is not belongs to any organization, company or person individual. It belongs to all of us. You can check full agreement [License Paper](./LICENSE)
+Please check the license before modifying and distributing this project. Distributing as a proprietary or paid application is prohibited. We can take any legal action if you do this. But we are happy to say this, you're welcome to contribute Knowlyric as a open source project and share with you friends. Knowlyric is not belongs to any organization, company or person individual. It belongs to all of us. You can check full agreement [License Paper](./LICENSE)
 
 ## **Contribution Guide**
 

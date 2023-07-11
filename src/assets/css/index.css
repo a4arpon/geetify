@@ -19,7 +19,7 @@ body {
   @apply hidden lg:invisible !important;
 }
 .rhap_progress-indicator{
-  @apply bg-transparent h-0 !important
+  @apply bg-primary !important
 }
 .rhap_progress-filled{
   @apply bg-primary !important

@@ -14,7 +14,7 @@ const Navbar = () => {
             <List size={28} />
           </label>
           <Link to={'/'} className="normal-case text-4xl font-semibold">
-            GeetiFy
+            Knowlyric
           </Link>
         </div>
       </div>
