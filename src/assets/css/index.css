@@ -10,7 +10,7 @@ body {
 }
 /* React HTML Audio */
 .rhap_container {
-  @apply bg-transparent col-span-2 p-0 !important;
+  @apply bg-transparent col-span-2 p-0 flex-col-reverse !important;
 }
 .rhap_time {
   @apply text-base-content !important;
@@ -22,19 +22,12 @@ body {
 .rhap_progress-filled {
   @apply bg-primary !important;
 }
+.rhap_progress-indicator{
+  @apply h-4 w-3 rounded-none rounded-b-full !important
+}
 .rhap_download-progress {
   @apply bg-base-200 !important;
 }
 .rhap_progress-bar-show-download {
   @apply bg-base-100 !important;
-}
-
-.rhap_play-pause-button > svg {
-  @apply h-full w-full !important;
-}
-.rhap_play-pause-button {
-  @apply btn btn-primary btn-circle focus:outline-none !important;
-}
-.rhap_button-clear {
-  @apply overflow-visible !important;
 }
