@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import AudioItem from '../../components/shared/audioItem/AudioItem'
 const Home = () => {
-  const [audios, setAudios] = useState(null)
+  const [audios, setAudios] = useState({})
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER_URL}audios/all`)
@@ -10,7 +10,7 @@ const Home = () => {
       .then((res) => setAudios(res))
 
     return () => {
-      setAudios(null)
+      setAudios({})
     }
   }, [])
 
