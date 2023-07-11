@@ -14,8 +14,6 @@ dist-ssr
 /audio/
 audio/*
 public/audio/*
-/src/components/shared/player/*
-/src/components/shared/player/Player.jsx
 /src/components/shared/player/AudioComponent.jsx
 # Editor directories and files
 

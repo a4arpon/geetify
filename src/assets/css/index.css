@@ -5,6 +5,28 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 .glassEffect {
-  backdrop-filter: blur(8px) saturate(200%);
-  -webkit-backdrop-filter: blur(8px) saturate(200%);
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(10px) saturate(200%);
+}
+
+.rhap_container {
+  @apply bg-transparent col-span-2 !important;
+}
+.rhap_time {
+  @apply text-base-content !important;
+}
+.rhap_additional-controls {
+  @apply hidden lg:invisible !important;
+}
+.rhap_progress-indicator{
+  @apply bg-transparent h-0 !important
+}
+.rhap_progress-filled{
+  @apply bg-primary !important
+}
+.rhap_download-progress{
+  @apply bg-base-200 !important
+}
+.rhap_progress-bar-show-download{
+  @apply bg-base-100
 }

@@ -1,13 +1,26 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import AudioItem from '../../components/shared/audioItem/AudioItem'
-
 const Home = () => {
-  const audioItems = []
+  const [audios, setAudios] = useState(null)
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_SERVER_URL}audios/all`)
+      .then((data) => data?.data)
+      .then((res) => setAudios(res))
 
-  for (let i = 0; i < 100; i++) {
-    audioItems.push(<AudioItem key={i} />)
-  }
+    return () => {
+      setAudios(null)
+    }
+  }, [])
 
-  return <div className="grid lg:grid-cols-4 gap-2"> {audioItems} </div>
+  return (
+    <div className="grid lg:grid-cols-4 gap-2">
+      {audios?.map((item) => (
+        <AudioItem key={item?.thumbnail} item={item}/>
+      ))}
+    </div>
+  )
 }
 
 export default Home

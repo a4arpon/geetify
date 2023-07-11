@@ -1,9 +1,8 @@
 {
   "background_color": "#545454",
   "description": "An open-source, full-stack community project inspired by Spotify, providing free access to music streaming and sharing within the open source community.",
-  "dir": "ltr",
   "display": "standalone",
-  "name": "Geetify | Spotify Alternative for poor.",
+  "name": "Geetify | Community based auto streaming platform.",
   "orientation": "any",
   "scope": "/",
   "short_name": "Geetify",
@@ -16,14 +15,13 @@
     "music",
     "productivity"
   ],
-  "screenshots": [],
   "icons": [
     {
       "src": "/vite.svg",
       "type": "image/svg+xml"
     },
     {
-      "src": "https://geetify.netlify.app/assets/logo.png"
+      "src": "https://geetify.netlify.app/iconHigh.png"
     },
     {
       "src": "/favicon.ico",
@@ -32,7 +30,5 @@
   ],
   "shortcuts": [],
   "lang": "en",
-  "display_override": ["standalone"],
-  "prefer_related_applications": true,
-  "iarc_rating_id": "4.9"
+  "display_override": ["standalone"]
 }
