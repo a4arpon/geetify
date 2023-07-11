@@ -11,14 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
-/audio/
-audio/*
-public/audio/*
-/src/components/shared/player/*
-/src/components/shared/player/Player.jsx
-/src/components/shared/player/AudioComponent.jsx
-# Editor directories and files
 
+# Editor directories and files
+.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
