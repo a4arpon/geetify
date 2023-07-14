@@ -3,7 +3,6 @@ import { List } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../providers/AuthProvider'
 
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
   return (
@@ -14,13 +13,12 @@ const Navbar = () => {
             <List size={28} />
           </label>
           <Link to={'/'} className="normal-case text-4xl font-semibold">
-            Knowlyric
+            KLyric
           </Link>
         </div>
       </div>
       <div className="flex-none">
-        {user
-          ? (
+        {user ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -47,15 +45,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-            )
-          : (
+        ) : (
           <Link
             to={'/login'}
             className="btn btn-sm btn-primary font-semibold text-base"
           >
             Login
           </Link>
-            )}
+        )}
       </div>
     </div>
   )

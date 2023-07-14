@@ -4,10 +4,10 @@
 body {
   font-family: 'Roboto Mono', monospace;
 }
-.glassEffect {
+/* .glassEffect {
   backdrop-filter: blur(10px) saturate(200%);
   -webkit-backdrop-filter: blur(10px) saturate(200%);
-}
+} */
 /* React HTML Audio */
 .rhap_container {
   @apply bg-transparent col-span-2 p-0 flex-col-reverse !important;
