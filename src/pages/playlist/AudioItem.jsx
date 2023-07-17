@@ -1,8 +1,9 @@
 import { PlayCircleFill } from 'react-bootstrap-icons'
 import useAudio from '../../hooks/useAudio'
 
-const AudioItem = ({ payload }) => {
+const AudioItem = ({ payload, index }) => {
   const { audio, setAudio } = useAudio()
+  payload.index = index
   return (
     <div className="bg-base-100 p-3 lg:p-5 rounded-lg flex justify-between items-center flex-col lg:flex-row">
       <h1>{payload?.title}</h1>

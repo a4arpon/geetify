@@ -29,8 +29,8 @@ const Playlist = () => {
         </div>
       </div>
       <div className="flex flex-col gap-3">
-        {audioList?.audios?.map((item) => (
-          <AudioItem key={item?._id} payload={item} />
+        {audioList?.audios?.map((item, index) => (
+          <AudioItem key={item?._id} payload={item} index={index}/>
         ))}
       </div>
     </div>
