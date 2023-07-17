@@ -3,13 +3,32 @@ import 'react-h5-audio-player/lib/styles.css'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import useAudio from '../../../hooks/useAudio'
+import useAudioRefetch from '../../../hooks/useAudioRefetch'
 
 const Player = () => {
   const { audio } = useAudio()
-  const refetchMyUrl = (link) => {
-    toast.dismiss()
-    toast.loading('Please wait for few seconds. Our media is cooking now...')
-    console.log(link)
+  const audioReFetcher = useAudioRefetch()
+  const refetchMyUrl = () => {
+    const currentTime = new Date()
+    const refreshTime = new Date(audio?.refreshTime._seconds * 1000)
+
+    const timeDifference = currentTime - refreshTime
+    const hoursDifference = timeDifference / (1000 * 60 * 60)
+
+    if (hoursDifference <= 23) {
+      toast.dismiss()
+      toast.loading(
+        'Please wait for a few seconds. Your media is cooking on the server....'
+      )
+      console.log('Should I fetch?')
+    } else {
+      console.log(
+        'Yes, I need to fetch',
+        timeDifference,
+        hoursDifference,
+        refreshTime
+      )
+    }
   }
   return (
     <div className="bottom-0 fixed bg-base-300 glassEffect w-full p-3 grid lg:grid-cols-3 justify-between bg-opacity-50 items-center">
@@ -28,8 +47,7 @@ const Player = () => {
       <H5AudioPlayer
         // eslint-disable-next-line no-unused-vars
         onError={(err) => {
-          console.log('err')
-          refetchMyUrl(audio?.refreshLink)
+          refetchMyUrl()
         }}
         // eslint-disable-next-line no-unused-vars
         onEnded={(end) => {
