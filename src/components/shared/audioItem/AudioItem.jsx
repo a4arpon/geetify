@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const AudioItem = ({ item }) => {
   return (
     <div className="bg-base-200 w-full rounded-lg glassEffect bg-opacity-70">
-      <img src={item?.thumbnail} alt="" className="rounded-t-lg" />
+      <img src={item?.thumbnail} alt="" className="rounded-t-lg w-full h-72" />
       <div className="p-5">
         <p className="audioCardHeading mb-2 truncate font-bold">
           {item?.title}

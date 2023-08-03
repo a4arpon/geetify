@@ -6,8 +6,8 @@ import useAudio from '../../../hooks/useAudio'
 import useAudioRefetch from '../../../hooks/useAudioRefetch'
 
 const Player = () => {
-  const { audio } = useAudio()
-  const audioReFetcher = useAudioRefetch()
+  const { audio, setAudio } = useAudio()
+  const refetchAudio = useAudioRefetch()
   const refetchMyUrl = () => {
     const currentTime = new Date()
     const refreshTime = new Date(audio?.refreshTime._seconds * 1000)
@@ -16,18 +16,15 @@ const Player = () => {
     const hoursDifference = timeDifference / (1000 * 60 * 60)
 
     if (hoursDifference <= 23) {
+      console.log('Should I fetch?')
+    } else {
       toast.dismiss()
       toast.loading(
         'Please wait for a few seconds. Your media is cooking on the server....'
       )
-      console.log('Should I fetch?')
-    } else {
-      console.log(
-        'Yes, I need to fetch',
-        timeDifference,
-        hoursDifference,
-        refreshTime
-      )
+      setAudio({ ...audio, isError: true })
+      console.log(refetchAudio)
+      console.log('Yes, I need to fetch')
     }
   }
   return (
